@@ -1,0 +1,59 @@
+package Connection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class TestaInsercaoComParametro {
+
+	public static void main(String[] args) throws SQLException {
+
+		
+		Connection con = ConnectionFactory.recuperarConexao();
+		con.setAutoCommit(false);
+
+//		Ao executar SQL como Statement, temos um risco de segurança, chamado de SQL Injection
+//		SQL Injection nada mais é do que passar um novo comando SQL como parâmetro
+//		Para evitar SQL Injection, devemos usar a interface PreparedStatement
+//		Diferentemente do Statement, o PreparedStatement trata (sanitiza) cada parâmetro do comando SQL
+//		
+		try {
+	
+		PreparedStatement stm = con.prepareStatement("INSERT INTO PRODUTO (nome, descricao) VALUES (?, ?)"
+				,Statement.RETURN_GENERATED_KEYS);
+
+		adicionarVariavel("Smartv", "Tv Lg", stm);
+		adicionarVariavel("Xbox", "Game da Microsoft", stm);
+		
+		con.commit();
+		con.close();
+		stm.close();
+		
+	} catch (Exception e) {
+		
+		e.printStackTrace();
+		System.out.println("Rollback Executado");
+		con.rollback();
+	}
+}
+
+	private static void adicionarVariavel(String nome, String descricao, PreparedStatement stm) throws SQLException {
+		stm.setString(1, nome);
+		stm.setString(2, descricao);
+		
+		if(nome.equals("Smartv")) {
+			throw new RuntimeException("Não foi possível adicionar o produto");
+		}
+		
+		stm.execute();
+
+		ResultSet rst = stm.getGeneratedKeys();
+
+		while (rst.next()) {
+			Integer id = rst.getInt(1);
+			System.out.println("O id criado foi: " + id);
+		}
+	}
+}
