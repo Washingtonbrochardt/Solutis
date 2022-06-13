@@ -10,7 +10,9 @@ public class TestaInsercaoComParametro {
 
 	public static void main(String[] args) throws SQLException {
 
-		try (Connection con = ConnectionFactory.recuperarConexao()) {
+		ConnectionFactory connectionFactory = new ConnectionFactory();
+		
+		try (Connection con = connectionFactory.recuperarConexao();) {
 			con.setAutoCommit(false);
 
 //		Ao executar SQL como Statement, temos um risco de segurança, chamado de SQL Injection

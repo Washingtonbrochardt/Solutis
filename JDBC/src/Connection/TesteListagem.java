@@ -11,7 +11,8 @@ public class TesteListagem {
 	
 	public static void main(String[] args) throws SQLException {
 		
-		Connection con = ConnectionFactory.recuperarConexao();
+		ConnectionFactory connectionFactory = new ConnectionFactory();
+		Connection con = connectionFactory.recuperarConexao();
 		
 		//Para executar um comando SQL, podemos usar a interface java.sql.Statement
 		//O método execute envia o comando para o banco de dados

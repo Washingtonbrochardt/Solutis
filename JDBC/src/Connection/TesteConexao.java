@@ -5,14 +5,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class TesteConexao {
-	
-	public static void main (String[] chuchu) throws SQLException{
-	
-	Connection con = ConnectionFactory.recuperarConexao();
 
-	System.out.println("Fechando conexao");
-	
-	con.close();
+	public static void main(String[] chuchu) throws SQLException {
+
+		ConnectionFactory connectionFactory = new ConnectionFactory();
+		Connection con = connectionFactory.recuperarConexao();
+
+		System.out.println("Fechando conexao");
+
+		con.close();
 	}
-	
+
 }
