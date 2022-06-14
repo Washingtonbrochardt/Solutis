@@ -1,3 +1,5 @@
 1654997539551	Rename type 'CriarConexao'
 1654997805486	Rename package 'TesteConexao'
 1655143311311	Extract method 'adicionarVariavel'
+1655167974673	Rename type 'PersistenciaProduto'
+1655168008062	Move compilation unit

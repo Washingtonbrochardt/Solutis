@@ -1,0 +1,18 @@
+package Connection;
+
+public class Produto {
+	
+	private Integer i;
+	private String nome;
+	private String descricao;
+	
+	public Produto(Integer i, String nome, String descricao) {
+		super();
+		this.i = i;
+		this.nome = nome;
+		this.descricao = descricao;
+	}
+	
+	
+
+}
