@@ -22,4 +22,10 @@
     <fullyQualifiedTypeName name="java.util.NoSuchElementException"/>
     <fullyQualifiedTypeName name="java.util.OptionalDouble"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="br.com.alura.jdbc.dao.CategoriaDAO"/>
+    <fullyQualifiedTypeName name="br.com.alura.jdbc.dao.ProdutoDAO"/>
+    <fullyQualifiedTypeName name="br.com.alura.jdbc.factory.ConnectionFactory"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 </qualifiedTypeNameHistroy>

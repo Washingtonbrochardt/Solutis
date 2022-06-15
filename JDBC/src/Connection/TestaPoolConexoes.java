@@ -3,6 +3,8 @@ package Connection;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import Factory.ConnectionFactory;
+
 //É boa prática usar um pool de conexões
 //Um pool de conexões administra/controla a quantidade de conexões abertas
 //Normalmente tem um mínimo e máximo de conexões

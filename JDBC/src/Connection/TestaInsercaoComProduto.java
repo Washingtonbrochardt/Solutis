@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.List;
 
 import DAO.ProdutoDAO;
+import Factory.ConnectionFactory;
+import Modelo.Produto;
 
 //Para cada tabela de domínio, temos uma classe de domínio
 //Por exemplo, a tabela produtos tem uma classe Produto associada

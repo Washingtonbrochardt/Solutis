@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import Factory.ConnectionFactory;
+
 public class TesteListagem {
 	
 	public static void main(String[] args) throws SQLException {
