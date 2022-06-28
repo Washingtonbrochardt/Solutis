@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 import javax.validation.constraints.NotBlank;
 
+import org.springframework.data.domain.Page;
+
 import com.alura.forum.modelo.Topico;
 
 public class TopicoDTO {
@@ -40,9 +42,9 @@ public class TopicoDTO {
 		return dataCriacao;
 	}
 
-	public static List<TopicoDTO> converter(List<Topico> topicos) {
+	public static Page<TopicoDTO> converter(Page<Topico> topicos) {
 		
-		return topicos.stream().map(TopicoDTO::new).collect(Collectors.toList());
+		return topicos.map(TopicoDTO::new);
 	}
 
 }
